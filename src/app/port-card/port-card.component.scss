@@ -7,7 +7,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Animated gradient background */
 .background {
   position: relative;
   height: 100%;
@@ -17,6 +16,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 @keyframes gradientBG {
@@ -25,49 +26,48 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Glass container */
 .container {
   background: rgba(255, 255, 255, 0.15);
-  padding: 50px;
-  border-radius: 20px;
+  padding: 40px 20px;
+  border-radius: 16px;
   backdrop-filter: blur(20px);
   box-shadow: 0 12px 60px rgba(0, 0, 0, 0.15);
   text-align: center;
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.4s ease;
 }
 
 .container:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .name {
   font-family: 'Great Vibes', cursive;
-  font-size: 64px;
+  font-size: 48px;
   color: #7b2cbf;
   text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.4);
   margin-bottom: 10px;
 }
 
 .line {
-  width: 90px;
+  width: 60px;
   height: 3px;
   background: #9d4edd;
-  margin: 20px auto;
+  margin: 16px auto;
   border-radius: 4px;
   box-shadow: 0 0 8px #d0a2f7;
 }
 
 .subtitle {
-  font-size: 18px;
+  font-size: 16px;
   color: #4a148c;
   letter-spacing: 1px;
-  margin-top: 12px;
+  margin-top: 10px;
   font-weight: 300;
 }
 
-/* Animation */
 .fade-in {
   opacity: 0;
   animation: fadeInUp 2s ease forwards;
@@ -84,7 +84,6 @@
   }
 }
 
-/* Optional: Subtle particles */
 .particles {
   position: absolute;
   width: 100%;
@@ -93,4 +92,27 @@
   background-size: 30px 30px;
   pointer-events: none;
   z-index: 0;
+}
+
+/* ✅ Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 16px;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .container:hover {
+    transform: none; /* Avoid scale jump on mobile */
+  }
 }

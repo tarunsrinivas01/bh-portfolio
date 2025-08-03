@@ -1,0 +1,12 @@
+/* Example */
+@media (max-width: 768px) {
+    .hero-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-pic {
+      width: 100%;
+    }
+  }
+  
